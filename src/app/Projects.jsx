@@ -88,7 +88,6 @@ export default function Projects() {
                       ? setIndex(idx - 1)
                       : setIndex(projects.length - 1);
                   }}
-                  size={30}
                   className="cursor-pointer"
                 />
               </div>
@@ -99,7 +98,6 @@ export default function Projects() {
                   onClick={() => {
                     idx + 1 < projects.length ? setIndex(idx + 1) : setIndex(0);
                   }}
-                  size={30}
                   className="cursor-pointer"
                 />
               </div>

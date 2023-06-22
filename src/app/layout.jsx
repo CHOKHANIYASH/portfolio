@@ -48,7 +48,7 @@ export const metadata = {
   description: "yash chokhani portfolio website",
 };
 export default function RootLayout({ children }) {
-  config.autoAddCss = false;
+  config.autoAddCss = true;
   return (
     <html lang="en" className={`scroll-smooth`}>
       <body className="w-100 dark:bg-gray-900">
