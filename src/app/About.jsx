@@ -22,14 +22,14 @@ export default function About() {
             <div className="flex flex-col dark:text-white">
               <div className="place-self-center  ">
                 <p>
-                  Hello there! My name is Yash Chokhani, and I'm thrilled to
-                  introduce myself to you.
+                  Hello there! My name is Yash Chokhani, and I&apos;m thrilled
+                  to introduce myself to you.
                 </p>
               </div>
               <div className="place-self-center">
                 <p>
-                  I am currently pursuing a Bachelor's degree in Information
-                  Technology
+                  I am currently pursuing a Bachelor&apos;s degree in
+                  Information Technology
                 </p>
               </div>
               <div className="place-self-center">

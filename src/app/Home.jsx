@@ -51,7 +51,9 @@ export default function Home() {
         {/* main content */}
         <div className="m-4 md:m-40 flex flex-col md:flex-row justify-between space-x-5 p-10">
           <div className="basis-full md:basis-1/2">
-            <h3 className="text-left text-xl dark:text-white">Hello, I'm</h3>
+            <h3 className="text-left text-xl dark:text-white">
+              Hello, I&apos;m
+            </h3>
             <h1 className="text-left text-4xl font-bold  text-blue-500">
               YASH CHOKHANI
             </h1>
@@ -93,11 +95,11 @@ export default function Home() {
               </p>
               <p className="text-left">
                 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.name=
-                <b>"YASH CHOKHANI"</b>;
+                <b> &ldquo;YASH CHOKHANI&rdquo;</b>;
               </p>
               <p className="text-left ">
                 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.traits=[
-                <b>"BACKEND"</b>,<b>"REACT"</b>];
+                <b> &ldquo;BACKEND&rdquo;</b>,<b> &ldquo;REACT&rdquo;</b>];
               </p>
               <p className="text-left ">
                 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.age=20;

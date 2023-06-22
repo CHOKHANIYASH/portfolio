@@ -48,7 +48,6 @@ export const metadata = {
   title: "yash chokhani",
   description: "yash chokhani portfolio website",
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`scroll-smooth`}>

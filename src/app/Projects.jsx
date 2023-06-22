@@ -64,7 +64,7 @@ export default function Projects() {
     return () => {
       resetTimeout();
     };
-  }, [index]);
+  }, [index, delay, projects.length]);
   return (
     <div id="Projects" className="scroll-my-16">
       <h1 className="text-center  text-blue-400 font-bold text-5xl">

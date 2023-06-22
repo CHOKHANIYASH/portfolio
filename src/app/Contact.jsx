@@ -12,10 +12,10 @@ export default function Contact() {
     e.preventDefault();
     emailjs
       .send(
-        "service_gyo3cd8",
-        "template_3xixaay",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
         { from_name: name, name, email, message, reply_to: email },
-        "7NKm13YF76J0wHtck"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .catch((err) => {
         console.log(err);
@@ -35,7 +35,7 @@ export default function Contact() {
           Contact
         </h2>
         <p className=" mb-4 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-          Let's get in touch
+          Let&apos;s get in touch
         </p>
         <p className="font-bold text-blue-300 text-lg text-center dark:text-white">
           email:yashchokhani95@gmail.com
