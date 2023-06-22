@@ -95,11 +95,11 @@ export default function Home() {
               </p>
               <p className="text-left">
                 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.name=
-                <b> &ldquo;YASH CHOKHANI&rdquo;</b>;
+                <b>&ldquo;YASH CHOKHANI&rdquo;</b>;
               </p>
               <p className="text-left ">
                 4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.traits=[
-                <b> &ldquo;BACKEND&rdquo;</b>,<b> &ldquo;REACT&rdquo;</b>];
+                <b>&ldquo;BACKEND&rdquo;</b>,<b>&ldquo;REACT&rdquo;</b>];
               </p>
               <p className="text-left ">
                 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.age=20;
