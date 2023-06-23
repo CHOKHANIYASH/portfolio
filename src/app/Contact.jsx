@@ -41,10 +41,11 @@ export default function Contact() {
           email:yashchokhani95@gmail.com
         </p>
         <div className="grid grid-flow-row md:grid-cols-2 m-4">
-          <div className="md:my-28  md:ml-36 bg-blue-400 rounded-2xl grid ">
+          <div className="text-lg md:my-28  md:ml-36 bg-blue-400 rounded-2xl grid ">
             <FontAwesomeIcon
-              className="w-52 h-52 text-white place-self-center"
+              className=" text-white place-self-center"
               icon={faHandshake}
+              size="10x"
             />
           </div>
           <div className="py-8  shadow-2xl md:mr-28	mb-8 lg:py-16 px-4  max-w-screen-md">
@@ -108,7 +109,7 @@ export default function Contact() {
                 </button>
               ) : (
                 <FontAwesomeIcon
-                  className="w-8 h-8 text-blue-500"
+                  className="text-3xl text-blue-500"
                   icon={faCircleCheck}
                 />
               )}

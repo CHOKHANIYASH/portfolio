@@ -110,13 +110,13 @@ export default function Projects() {
                 </p>
                 <a href={prj.repo} target="_blank">
                   <FontAwesomeIcon
-                    className="w-6 h-6 mr-1 text-blue-500"
+                    className="text-3xl mr-1 text-blue-500"
                     icon={faGithub}
                   />
                 </a>
                 <a href={prj.demo} target="_blank">
                   <FontAwesomeIcon
-                    className="w-6 h-6 text-blue-500"
+                    className="text-3xl text-blue-500"
                     icon={faGlobe}
                   />
                 </a>

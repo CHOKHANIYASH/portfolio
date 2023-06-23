@@ -8,8 +8,9 @@ export default function Home() {
     {
       logo: (
         <FontAwesomeIcon
-          className="w-20 h-20 mt-2  border-2 text-white bg-blue-400  rounded-full p-4"
+          className="w-20 h-20  mt-2  border-2 text-white bg-blue-400  rounded-full p-4"
           icon="fa-solid fa-code"
+          size="3x"
         />
       ),
       title: "Backend",
@@ -19,8 +20,9 @@ export default function Home() {
     {
       logo: (
         <FontAwesomeIcon
-          className="w-20 h-20  mt-2  border-2 text-white bg-blue-400 rounded-full p-4"
+          className="w-20 h-20 mt-2  border-2 text-white bg-blue-400 rounded-full p-4"
           icon="fa-brands fa-java"
+          size="3x"
         />
       ),
       title: "Java",
@@ -30,8 +32,9 @@ export default function Home() {
     {
       logo: (
         <FontAwesomeIcon
-          className="w-20 h-20  mt-2 text-white border-2 bg-blue-400 rounded-full p-4"
+          className="w-20 h-20 mt-2  text-white border-2 bg-blue-400 rounded-full p-4"
           icon="fa-solid fa-database"
+          size="3x"
         />
       ),
       title: "Databases",
@@ -63,7 +66,7 @@ export default function Home() {
             <div className="social-handles flex space-x-2">
               <a href="https://github.com/CHOKHANIYASH" target="_blank">
                 <FontAwesomeIcon
-                  className="w-6 h-6 text-blue-500"
+                  className="text-3xl text-blue-500"
                   icon="fa-brands fa-github"
                 />
               </a>
@@ -72,13 +75,13 @@ export default function Home() {
                 target="_blank"
               >
                 <FontAwesomeIcon
-                  className="w-6 h-6 text-blue-500"
+                  className="text-3xl text-blue-500"
                   icon="fa-brands fa-linkedin"
                 />
               </a>
               <a href="https://twitter.com/yashchokhani6" target="_blank">
                 <FontAwesomeIcon
-                  className="w-6 h-6 text-blue-500"
+                  className="text-3xl text-blue-500"
                   icon="fa-brands fa-twitter"
                 />
               </a>
@@ -120,8 +123,8 @@ export default function Home() {
           {boxContent.map((item) => {
             return (
               <>
-                <div className="my-4 max-w-sm rounded-lg hover:-translate-y-10 ease-in duration-300  border border-gray-200  shadow-lg dark:border-gray-700 dark:bg-gray-800">
-                  <div href="#" className="text-center w-100 ">
+                <div className="my-4  max-w-sm rounded-lg hover:-translate-y-10 ease-in duration-300  border border-gray-200  shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                  <div href="#" className="text-center text-2xl w-100  ">
                     {item.logo}
                   </div>
                   <div className="p-5">

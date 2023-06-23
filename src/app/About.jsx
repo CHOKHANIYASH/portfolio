@@ -57,73 +57,61 @@ export default function About() {
             My Skills
           </h2>
           <p
-            className="absolute t-0 left-5 text-lg"
+            className="absolute "
             style={{ top: 50, left: "80%", fontSize: 23 }}
           >
             HTML5
           </p>
-          <p
-            className="absolute t-0 left-0 text-2xl"
-            style={{ top: 0, left: 0, fontSize: 25 }}
-          >
+          <p className="absolute l" style={{ top: 0, left: 0, fontSize: 25 }}>
             Git
           </p>
           <p
-            className="absolute t-0 left-5 text-lg"
+            className="absolute "
             style={{ top: 200, left: -60, fontSize: 14 }}
           >
             CSS3
           </p>
           <p
-            className="absolute t-0 left-5 text-lg"
-            style={{ top: "30%", left: "35%", fontSize: 18 }}
+            className="absolute "
+            style={{ top: "30%", left: "15%", fontSize: 18 }}
           >
             Firebase
           </p>
           <p
-            className="absolute t-0 left-5 text-lg"
+            className="absolute "
             style={{ top: 40, left: "75%", fontSize: 12 }}
           >
             EJS
           </p>
           <p
-            className="absolute t-0 left-5 text-lg"
+            className="absolute "
             style={{ top: 380, left: "85%", fontSize: 18 }}
           >
             Express
           </p>
           <p
-            className="absolute t-0 left-5 text-lg"
+            className="absolute "
             style={{ top: 320, left: "65%", fontSize: 18 }}
           >
             NextJs
           </p>
           <p
-            className="absolute t-0 left-5 text-lg"
+            className="absolute "
             style={{ top: 350, left: 150, fontSize: 25 }}
           >
             MongoDB
           </p>
           <p
-            className="absolute t-0 left-5 text-lg"
+            className="absolute "
             style={{ top: 120, left: "22%", fontSize: 12 }}
           >
             tailwindCSS
           </p>
         </div>
-        <div className="w-full  z-10 text-blue-400 grid grid-cols-3 md:gap-4 place-items-center h-96">
-          <FontAwesomeIcon
-            icon="fa-brands fa-node "
-            className="w-20 h-20 md:w-40 md:h-40"
-          />
-          <FontAwesomeIcon
-            icon="fa-brands fa-java"
-            className="w-20 h-20 md:w-40 md:h-40"
-          />
-          <FontAwesomeIcon
-            icon="fa-brands fa-react "
-            className="w-20 h-20 md:w-40 md:h-40"
-          />
+        <div className="w-full text-lg md:text-4xl  z-10 text-blue-400 grid grid-cols-3 md:gap-4 place-items-center h-96">
+          <FontAwesomeIcon className=" " icon="fa-brands fa-node " size="5x" />
+          <FontAwesomeIcon className="" icon="fa-brands fa-java" size="5x" />
+          <FontAwesomeIcon className="" icon="fa-brands fa-react " size="5x" />
         </div>
       </div>
     </>
