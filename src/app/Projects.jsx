@@ -74,7 +74,7 @@ export default function Projects() {
         <div className="slideshowSlider ">
           {projects.map((prj, idx) => (
             <div
-              className={`slide relative  m-10 rounded-lg bg-gray-50  p-6 pl-20 shadow-lg flex flex-col md:flex-row dark:bg-gray-600 ${
+              className={`slide relative  m-10 rounded-lg bg-gray-50  p-6 pl-20 shadow-lg flex flex-col md:flex-row dark:bg-slate-700 ${
                 index === idx ? " " : "hidden"
               } `}
               key={idx}

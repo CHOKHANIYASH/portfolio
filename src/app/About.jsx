@@ -9,7 +9,7 @@ export default function About() {
         <h1 className="text-center  text-blue-400  font-bold text-5xl">
           About
         </h1>
-        <div className="w-full flex flex-col md:flex-row dark:bg-gray-800 bg-blue-200">
+        <div className="w-full flex flex-col md:flex-row dark:bg-slate-800 bg-blue-200">
           <div className=" flex place-content-center ">
             <Image
               className="rounded-full  w-64 h-64 m-10 border-8 border-solid border-white"

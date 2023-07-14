@@ -89,7 +89,7 @@ export default function Home() {
           </div>
           {/* ionfoCard */}
           <div className=" basis-full md:basis-1/2">
-            <div className="rounded-xl font-serif bg-white shadow-2xl dark:bg-gray-900 text-blue-400 p-10">
+            <div className="rounded-xl font-serif bg-white shadow-2xl dark:bg-slate-800 text-blue-400 p-10">
               <p className="text-left ">
                 1&nbsp;className <b>Person</b> &#123;
               </p>
@@ -123,7 +123,7 @@ export default function Home() {
           {boxContent.map((item) => {
             return (
               <>
-                <div className="my-4  max-w-sm rounded-lg hover:-translate-y-10 ease-in duration-300  border border-gray-200  shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                <div className="my-4  max-w-sm rounded-lg hover:-translate-y-10 ease-in duration-300  border border-gray-200  shadow-lg dark:border-gray-700 dark:bg-slate-800">
                   <div href="#" className="text-center text-2xl w-100  ">
                     {item.logo}
                   </div>
