@@ -48,7 +48,7 @@ export default function Contact() {
               size="10x"
             />
           </div>
-          <div className="py-8  shadow-2xl md:mr-28	mb-8 lg:py-16 px-4  max-w-screen-md">
+          <div className="py-8  shadow-2xl  dark:shadow-gray-800 md:mr-28	mb-8 lg:py-16 px-4  max-w-screen-md">
             <form action="#" className="space-y-8" onSubmit={handleSubmit}>
               <div>
                 <label

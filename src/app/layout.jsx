@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import NavBar from "./Navbar";
+import { Theme } from "./Theme";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faDatabase,
@@ -52,8 +53,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`scroll-smooth`}>
       <body className="w-100 dark:bg-gray-900">
-        <NavBar />
-        {children}
+        <Theme>
+          <NavBar />
+          {children}
+        </Theme>
       </body>
     </html>
   );

@@ -4,8 +4,9 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Logo from "./assets/images/logo.svg";
-// import emailjs from "@emailjs/browser";
-
+import { useTheme } from "next-themes";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 const navigation = [
   { name: "Home", href: "#Home", current: false },
   { name: "About me", href: "#About", current: false },
@@ -18,10 +19,14 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+  const { theme, setTheme } = useTheme();
+  function toggle() {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
   return (
     <Disclosure
       as="nav"
-      className="w-100 sticky text-blue-400 dark:text-white dark:bg-gray-800 shadow-lg top-0 left-0 right-0 bg-white "
+      className="w-100 sticky z-10 text-blue-400 dark:text-white dark:bg-gray-800 shadow-lg top-0 left-0 right-0 bg-white "
     >
       {({ open }) => (
         <>
@@ -51,6 +56,13 @@ export default function NavBar() {
                     alt="Your Company"
                   />
                 </div>
+                <div className="sm:hidden cursor-pointer absolute right-0 m-1">
+                  {theme === "light" ? (
+                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faSun} />
+                  ) : (
+                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faMoon} />
+                  )}
+                </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -69,6 +81,13 @@ export default function NavBar() {
                       </a>
                     ))}
                   </div>
+                </div>
+                <div className="hidden cursor-pointer sm:block sm:ml-auto sm:mt-1">
+                  {theme === "light" ? (
+                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faSun} />
+                  ) : (
+                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faMoon} />
+                  )}
                 </div>
               </div>
             </div>

@@ -53,7 +53,7 @@ export default function Home() {
 
         {/* main content */}
         <div className="m-4 md:m-40 flex flex-col md:flex-row justify-between space-x-5 p-10">
-          <div className="basis-full md:basis-1/2">
+          <div className="basis-full mb-4 md:basis-1/2">
             <h3 className="text-left text-xl dark:text-white">
               Hello, I&apos;m
             </h3>
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
           {/* ionfoCard */}
           <div className=" basis-full md:basis-1/2">
-            <div className="rounded-xl font-serif bg-white shadow-2xl text-blue-400 p-10">
+            <div className="rounded-xl font-serif bg-white shadow-2xl dark:bg-gray-900 text-blue-400 p-10">
               <p className="text-left ">
                 1&nbsp;className <b>Person</b> &#123;
               </p>

@@ -38,13 +38,8 @@ export default function About() {
                   (MongoDB, Express.js, React.js, and Node.js) stack. This
                   comprehensive skill set allows me to work seamlessly across
                   the entire development process, from designing the user
-                  interface to managing the back-end infrastructure.
-                </p>
-              </div>
-              <div className="place-self-center">
-                <p>
-                  I also love doing open source development,I am a GSSoC 2023
-                  contributor
+                  interface to managing the back-end infrastructure.I am a GSSoC
+                  2023 contributor
                 </p>
               </div>
             </div>
