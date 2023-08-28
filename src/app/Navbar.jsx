@@ -24,11 +24,14 @@ export default function NavBar() {
   useEffect(() => {
     setMounted(true);
   }, []);
-  if (theme === "system") {
-    setTheme(systemTheme);
-  }
+  const isLight =
+    theme === "light" || (theme === "system" && systemTheme === "light");
   function toggle() {
-    setTheme(theme === "dark" ? "light" : "dark");
+    if (theme === "system") {
+      setTheme(systemTheme === "dark" ? "light" : "dark");
+    } else {
+      setTheme(theme === "dark" ? "light" : "dark");
+    }
   }
   return (
     <Disclosure
@@ -65,7 +68,7 @@ export default function NavBar() {
                 </div>
                 {mounted === true ? (
                   <div className="sm:hidden cursor-pointer absolute right-0 m-1">
-                    {theme === "light" ? (
+                    {isLight ? (
                       <FontAwesomeIcon
                         onClick={toggle}
                         size="2x"
@@ -101,7 +104,7 @@ export default function NavBar() {
                 </div>
                 {mounted === true ? (
                   <div className="hidden cursor-pointer sm:block sm:ml-auto sm:mt-1">
-                    {theme === "light" ? (
+                    {isLight ? (
                       <FontAwesomeIcon
                         onClick={toggle}
                         size="2x"
