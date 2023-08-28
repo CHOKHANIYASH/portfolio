@@ -70,8 +70,8 @@ export default function Projects() {
       <h1 className="text-center  text-blue-400 font-bold text-5xl">
         Projects
       </h1>
-      <div className="slideshow">
-        <div className="slideshowSlider ">
+      <div className="slideshow ">
+        <div className="slideshowSlider">
           {projects.map((prj, idx) => (
             <div
               className={`slide relative  m-10 rounded-lg bg-gray-50  p-6 pl-20 shadow-lg flex flex-col md:flex-row dark:bg-slate-700 ${
@@ -101,7 +101,7 @@ export default function Projects() {
                   className="cursor-pointer"
                 />
               </div>
-              <div>
+              <div className="lg:w-1/2">
                 <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                   {prj.title}
                 </h5>
@@ -122,7 +122,11 @@ export default function Projects() {
                 </a>
               </div>
               <div>
-                <Image src={prj.image} alt="yelpcamp" />
+                <Image
+                  className="lg:w-1/2  ml-auto"
+                  src={prj.image}
+                  alt="yelpcamp"
+                />
               </div>
             </div>
           ))}
