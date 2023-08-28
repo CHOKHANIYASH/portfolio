@@ -1,9 +1,9 @@
 "use client";
-import { Fragment } from "react";
+import { useState, useEffect } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import Logo from "./assets/images/logo.svg";
+import Logo from "../../public/assets/images/logo.svg";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +19,14 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, systemTheme } = useTheme();
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (theme === "system") {
+    setTheme(systemTheme);
+  }
   function toggle() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
@@ -56,13 +63,23 @@ export default function NavBar() {
                     alt="Your Company"
                   />
                 </div>
-                <div className="sm:hidden cursor-pointer absolute right-0 m-1">
-                  {theme === "light" ? (
-                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faSun} />
-                  ) : (
-                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faMoon} />
-                  )}
-                </div>
+                {mounted === true ? (
+                  <div className="sm:hidden cursor-pointer absolute right-0 m-1">
+                    {theme === "light" ? (
+                      <FontAwesomeIcon
+                        onClick={toggle}
+                        size="2x"
+                        icon={faSun}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        onClick={toggle}
+                        size="2x"
+                        icon={faMoon}
+                      />
+                    )}
+                  </div>
+                ) : null}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -82,13 +99,23 @@ export default function NavBar() {
                     ))}
                   </div>
                 </div>
-                <div className="hidden cursor-pointer sm:block sm:ml-auto sm:mt-1">
-                  {theme === "light" ? (
-                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faSun} />
-                  ) : (
-                    <FontAwesomeIcon onClick={toggle} size="2x" icon={faMoon} />
-                  )}
-                </div>
+                {mounted === true ? (
+                  <div className="hidden cursor-pointer sm:block sm:ml-auto sm:mt-1">
+                    {theme === "light" ? (
+                      <FontAwesomeIcon
+                        onClick={toggle}
+                        size="2x"
+                        icon={faSun}
+                      />
+                    ) : (
+                      <FontAwesomeIcon
+                        onClick={toggle}
+                        size="2x"
+                        icon={faMoon}
+                      />
+                    )}
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>

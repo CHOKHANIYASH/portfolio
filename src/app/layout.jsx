@@ -51,7 +51,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   config.autoAddCss = false;
   return (
-    <html lang="en" className={`scroll-smooth`}>
+    <html lang="en" className="scroll-smooth">
       <body className="w-100 dark:bg-gray-900">
         <Theme>
           <NavBar />
