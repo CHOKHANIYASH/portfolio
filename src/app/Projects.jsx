@@ -8,9 +8,9 @@ import {
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
-import yelpcamp from "./assets/images/yelpcamp.png";
-import notes from "./assets/images/notes.png";
-import restro from "./assets/images/restro.png";
+import yelpcamp from "../../public/assets/images/yelpcamp.png";
+import notes from "../../public/assets/images/notes.png";
+import restro from "../../public/assets/images/restro.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 export default function Projects() {

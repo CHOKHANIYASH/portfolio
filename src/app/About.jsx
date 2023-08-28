@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
-import profilePhoto from "./assets/images/profilePhoto.png";
+import profilePhoto from "../../public/assets/images/profilePhoto.png";
 export default function About() {
   return (
     <>

@@ -1,5 +1,5 @@
 import React from "react";
-import dash from "./assets/images/dash.svg";
+import dash from "../../public/assets/images/dash.svg";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
