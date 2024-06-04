@@ -1,26 +1,42 @@
-import React from "react";
+// "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import profilePhoto from "../../public/assets/images/profilePhoto.png";
+import Carousel from "./Carousal";
+
 export default function About() {
+  const skills = [
+    { name: "Expressjs" },
+    { name: "MongoDB" },
+    { name: "Postgresql" },
+    { name: "Terraform" },
+    { name: "GraphQL" },
+    { name: "Redis" },
+    { name: "Docker" },
+    { name: "Auth0" },
+    { name: "AWS Cognito" },
+    { name: "Nextjs" },
+    { name: "Tailwind CSS" },
+    { name: "Redux" },
+  ];
   return (
     <>
-      <div id="About" className="scroll-my-16">
-        <h1 className="text-center  text-blue-400  font-bold text-5xl">
+      <div id="About" className="font-mono scroll-my-16 ">
+        <h1 className="mb-2 text-5xl font-bold text-center text-blue-400">
           About
         </h1>
-        <div className="w-full flex flex-col md:flex-row dark:bg-slate-800 bg-blue-200">
-          <div className=" flex place-content-center ">
+        <div className="flex flex-col w-full bg-blue-300 md:flex-row dark:bg-slate-800 max-md:p-5">
+          <div className="flex place-content-center">
             <Image
-              className="rounded-full  w-64 h-64 m-10 border-8 border-solid border-white"
+              className="w-64 h-64 m-10 border-8 border-white border-solid rounded-full"
               src={profilePhoto}
               alt="profile photo"
               loading="lazy"
             />
           </div>
-          <div className="w-full p-2 md:w-5/6  place-self-center ">
-            <div className="flex flex-col dark:text-white">
-              <div className="place-self-center  ">
+          <div className="w-full p-2 md:w-5/6 place-self-center ">
+            <div className="flex flex-col text-white dark:text-white">
+              <div className="place-self-center ">
                 <p>
                   Hello there! My name is Yash Chokhani, and I&apos;m thrilled
                   to introduce myself to you.
@@ -47,68 +63,27 @@ export default function About() {
           <div></div>
         </div>
 
-        <div className="relative z-[-1] text-cyan-500 w-100">
-          <h2 className="text-center  text-blue-400 font-bold text-3xl">
+        <div className="z-[-1] text-cyan-500 w-100 ">
+          <h2 className="mt-2 text-3xl font-bold text-center text-blue-400">
             My Skills
           </h2>
-          <p
-            className="absolute "
-            style={{ top: 50, left: "80%", fontSize: 23 }}
-          >
-            HTML5
-          </p>
-          <p className="absolute l" style={{ top: 0, left: 0, fontSize: 25 }}>
-            Git
-          </p>
-          <p
-            className="absolute "
-            style={{ top: 200, left: -60, fontSize: 14 }}
-          >
-            CSS3
-          </p>
-          <p
-            className="absolute "
-            style={{ top: "30%", left: "15%", fontSize: 18 }}
-          >
-            Firebase
-          </p>
-          <p
-            className="absolute "
-            style={{ top: 40, left: "75%", fontSize: 12 }}
-          >
-            EJS
-          </p>
-          <p
-            className="absolute "
-            style={{ top: 380, left: "85%", fontSize: 18 }}
-          >
-            Express
-          </p>
-          <p
-            className="absolute "
-            style={{ top: 320, left: "65%", fontSize: 18 }}
-          >
-            NextJs
-          </p>
-          <p
-            className="absolute "
-            style={{ top: 350, left: 150, fontSize: 25 }}
-          >
-            MongoDB
-          </p>
-          <p
-            className="absolute "
-            style={{ top: 120, left: "22%", fontSize: 12 }}
-          >
-            tailwindCSS
-          </p>
         </div>
-        <div className="w-full text-lg md:text-4xl  z-10 text-blue-400 grid grid-cols-3 md:gap-4 place-items-center h-96">
-          <FontAwesomeIcon className=" " icon="fa-brands fa-node " size="5x" />
-          <FontAwesomeIcon className="" icon="fa-brands fa-java" size="5x" />
+        <div className="relative z-10 grid w-full grid-cols-3 text-lg text-blue-400 max-md:grid-cols-1 md:text-4xl md:gap-4 place-items-center h-96">
+          <FontAwesomeIcon className="" icon="fa-brands fa-node " size="5x" />
+          <FontAwesomeIcon className="" icon="fa-brands fa-aws" size="5x" />
           <FontAwesomeIcon className="" icon="fa-brands fa-react " size="5x" />
         </div>
       </div>
+      <Carousel className="mb-5 text-blue-400" slidesToShow={3}>
+        {skills.map((skill, idx) => (
+          <div
+            key={idx}
+            className="font-mono text-3xl text-center text-blue-400 max-md:text-sm"
+          >
+            {skill.name}
+          </div>
+        ))}
+      </Carousel>
     </>
   );
 }

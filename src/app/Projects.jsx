@@ -25,8 +25,7 @@ export default function Projects() {
     },
     {
       title: "Notes",
-      description:
-        "It's a notes taking website Tools or FrameWorks use are Frontend --> ReactJS,Bootstrap Backend --> NodeJS,ExpressJS,MongoDB,PassportJS",
+      description: "It's a Full stack(MERN) notes taking website ",
       repo: "https://github.com/CHOKHANIYASH/notes-app-backend",
       demo: "https://notes-app-frontend-two.vercel.app/",
       image: notes,
@@ -67,9 +66,7 @@ export default function Projects() {
   }, [index, delay, projects.length]);
   return (
     <div id="Projects" className="scroll-my-16">
-      <h1 className="text-center  text-blue-400 font-bold text-5xl">
-        Projects
-      </h1>
+      <h1 className="text-5xl font-bold text-center text-blue-400">Projects</h1>
       <div className="slideshow ">
         <div className="slideshowSlider">
           {projects.map((prj, idx) => (
@@ -110,7 +107,7 @@ export default function Projects() {
                 </p>
                 <a href={prj.repo} target="_blank">
                   <FontAwesomeIcon
-                    className="text-3xl mr-1 text-blue-500"
+                    className="mr-1 text-3xl text-blue-500"
                     icon={faGithub}
                   />
                 </a>
@@ -123,7 +120,7 @@ export default function Projects() {
               </div>
               <div>
                 <Image
-                  className="lg:w-1/2  ml-auto"
+                  className="ml-auto lg:w-1/2"
                   src={prj.image}
                   alt="yelpcamp"
                 />
@@ -132,7 +129,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="slideshowDots text-center">
+        <div className="text-center slideshowDots">
           {projects.map((_, idx) => (
             <div
               key={idx}
