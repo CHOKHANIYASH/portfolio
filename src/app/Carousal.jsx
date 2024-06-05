@@ -10,6 +10,7 @@ export default function Carousel({
   autoplaySpeed,
   speed,
   arrows,
+  dots,
 }) {
   const settings = {
     infinite: true,
@@ -17,6 +18,7 @@ export default function Carousel({
     slidesToShow,
     cssEase: "linear",
     arrows: arrows === undefined ? false : arrows,
+    dots: dots === undefined ? false : dots,
     slidesToScroll: 1,
     autoplay: true, // Enable autoplay
     autoplaySpeed: autoplaySpeed === undefined ? 3000 : autoplaySpeed, // Set the autoplay speed in milliseconds (e.g., 3000ms or 3 seconds)
