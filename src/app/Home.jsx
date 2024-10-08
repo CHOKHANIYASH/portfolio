@@ -61,7 +61,7 @@ export default function Home() {
               YASH CHOKHANI
             </h1>
             <h2 className="mb-4 text-lg text-left dark:text-white">
-              Full Stack Developer(MERN)
+              Backend and DevOps Developer
             </h2>
             <div className="flex space-x-2 social-handles">
               <a href="https://github.com/CHOKHANIYASH" target="_blank">
