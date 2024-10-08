@@ -12,6 +12,7 @@ import yelpcamp from "../../public/assets/images/yelpcamp.png";
 import notes from "../../public/assets/images/notes.png";
 import restro from "../../public/assets/images/restro.png";
 import imagetagger from "../../public/assets/images/imagetagger.png";
+import dochub from "../../public/assets/images/DocHub.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Carousal from "./Carousal";
@@ -47,6 +48,14 @@ export default function Projects() {
       repo: "https://github.com/CHOKHANIYASH/ImageTagger",
       demo: "https://image-tagger-sigma.vercel.app/11b36d5a-e021-70ec-bd34-bbb29cb83bfb",
       image: imagetagger,
+    },
+    {
+      title: "DocHub",
+      description:
+        " DocHub is a versatile platform for creating, editing, and sharing documents using the TipTap editor. It offers secure access control for collaboration, with a fully containerized backend on serverless architecture. The frontend is deployed on AWS Amplify,ensuring seamless document management for all users.",
+      repo: "https://github.com/CHOKHANIYASH/DocHub",
+      demo: "https://main.d2cmc6yh2eyika.amplifyapp.com",
+      image: dochub,
     },
   ];
   let delay = 4500;
