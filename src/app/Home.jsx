@@ -15,7 +15,7 @@ export default function Home() {
       ),
       title: "Backend",
       desceiption:
-        "I am a full stack developer but more involved in backend and love to work with nodejs as well as worked a lot of time on user authentications.",
+        "What fascinates me about backend development is the efficiency and power behind it. Whether it's automating complex workflows or seamlessly handling numerous API requests, the backend does the heavy lifting with precision. The ability to optimize performance using different cloud architectures and scale effortlessly across systems is what makes backend development so intriguing to me.",
     },
     {
       logo: (
@@ -27,7 +27,7 @@ export default function Home() {
       ),
       title: "Java",
       desceiption:
-        "Java is the first programming language I learned and it is my favourite programming language.I almost do all my DSA coding in java only",
+        "Java was the first programming language I learned, and it remains my favorite. I find its versatility and strong object-oriented principles particularly appealing. I often use Java for my data structures and algorithms coding, as it provides a robust framework for tackling complex problems.",
     },
     {
       logo: (
@@ -39,7 +39,7 @@ export default function Home() {
       ),
       title: "Databases",
       desceiption:
-        "As a developer databases are one of my favourite topic.I have worked with many databases like mongoDB,mysql,redis,firebase and I think databases are the core of any application.Figuring out which type of database and when to use it in project make it more interesting as a developer.",
+        "As a developer databases are one of my favourite topic.I have worked with many databases like mongoDB,postgresql,dynamodb and I think databases are the core of any application.Figuring out which type of database and when to use it in project make it more interesting as a developer.",
     },
   ];
   return (

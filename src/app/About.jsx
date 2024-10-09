@@ -50,12 +50,15 @@ export default function About() {
               </div>
               <div className="place-self-center">
                 <p>
-                  I am a full stack developer, specializing in the MERN
-                  (MongoDB, Express.js, React.js, and Node.js) stack. This
-                  comprehensive skill set allows me to work seamlessly across
-                  the entire development process, from designing the user
-                  interface to managing the back-end infrastructure.I am a GSSoC
-                  2023 contributor
+                  I am a Backend and DevOps developer with a strong
+                  specialization in Node.js, AWS services, and Serverless
+                  Architecture. My expertise lies in building robust, scalable
+                  backend systems, optimizing infrastructure for performance,
+                  and managing cloud-based deployments. While backend
+                  development is my core focus, I also have experience with
+                  frontend technologies like React and Tailwind CSS, enabling me
+                  to collaborate effectively across teams and contribute to
+                  full-stack solutions when needed.
                 </p>
               </div>
             </div>
