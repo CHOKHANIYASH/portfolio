@@ -1,163 +1,114 @@
 "use client";
-import React from "react";
 import "./slider.css";
 import { useState, useEffect, useRef } from "react";
-import {
-  faChevronRight,
-  faChevronLeft,
-  faGlobe,
-} from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
-import yelpcamp from "../../public/assets/images/yelpcamp.png";
-import notes from "../../public/assets/images/notes.png";
-import restro from "../../public/assets/images/restro.png";
-import imagetagger from "../../public/assets/images/imagetagger.png";
-import dochub from "../../public/assets/images/DocHub.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 import Carousal from "./Carousal";
+import Atag from "@/components/util/Atag";
+import axios from "axios";
 export default function Projects() {
-  const projects = [
-    {
-      title: "YelpCamp",
-      description:
-        "It is a camping location viewing website with their per night staying cost. people can view other peoples review or can login and write thier own review. people can login and post their own camping sites information.",
-      repo: "https://github.com/CHOKHANIYASH/yelp-camp",
-      demo: "https://yelp-camp-ruddy.vercel.app/",
-      image: yelpcamp,
-    },
-    {
-      title: "Notes",
-      description: "It's a Full stack(MERN) notes taking website ",
-      repo: "https://github.com/CHOKHANIYASH/notes-app-backend",
-      demo: "https://notes-app-frontend-two.vercel.app/",
-      image: notes,
-    },
-    {
-      title: "Restaurant Mneu Website",
-      description:
-        "It's a restaurant website project which I have made during one of my HTML,CSS,Javascript course.",
-      repo: "https://github.com/CHOKHANIYASH/DAVID-CHU-S-CHINA-BISTRO-RESTAURANT-WEBSITE",
-      demo: "https://chokhaniyash.github.io/DAVID-CHU-S-CHINA-BISTRO-RESTAURANT-WEBSITE/",
-      image: restro,
-    },
-    {
-      title: "Image Tagging Website",
-      description:
-        " an image tagging website utilizing AWS Rekognition. It features a fully serverless architecture built with Node.js and Express.js, seamlessly integrating various AWS services to provide a robust and scalable solution.",
-      repo: "https://github.com/CHOKHANIYASH/ImageTagger",
-      demo: "https://image-tagger-sigma.vercel.app/11b36d5a-e021-70ec-bd34-bbb29cb83bfb",
-      image: imagetagger,
-    },
-    {
-      title: "DocHub",
-      description:
-        " DocHub is a versatile platform for creating, editing, and sharing documents using the TipTap editor. It offers secure access control for collaboration, with a fully containerized backend on serverless architecture. The frontend is deployed on AWS Amplify,ensuring seamless document management for all users.",
-      repo: "https://github.com/CHOKHANIYASH/DocHub",
-      demo: "https://main.d2cmc6yh2eyika.amplifyapp.com",
-      image: dochub,
-    },
-  ];
-  let delay = 4500;
-
-  const [index, setIndex] = useState(0);
-  const timeoutRef = useRef(null);
-
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }
-
+  const [projects, setProjects] = useState([]);
   useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(
-      () =>
-        setIndex((prevIndex) =>
-          prevIndex === projects.length - 1 ? 0 : prevIndex + 1
-        ),
-      delay
-    );
-
-    return () => {
-      resetTimeout();
+    const fetchProjects = async () => {
+      const { data } = await axios.get(
+        "https://chokhaniyash-public-bucket.s3.ap-south-1.amazonaws.com/projects.json"
+      );
+      console.log(data);
+      setProjects(data);
     };
-  }, [index, delay, projects.length]);
+    fetchProjects();
+  }, []);
+
   return (
     <div id="Projects" className="">
       <h1 className="text-5xl font-bold text-center text-blue-400 ">
         Projects
       </h1>
-      <div className="md:hidden">
-        <Carousal slidesToShow={1} className="mb-5 font-mono " dots={true}>
-          {projects.map((prj, idx) => (
-            <div key={idx}>
-              <div
-                className={`m-5 p-5 rounded-lg bg-gray-100 shadow-lg  grid grid-flow-row dark:bg-slate-700`}
-              >
-                <div className="">
-                  <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                    {prj.title}
-                  </h5>
-                  <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-200">
-                    {prj.description}
-                  </p>
-                  <a href={prj.repo} target="_blank">
-                    <FontAwesomeIcon
-                      className="mr-1 text-3xl text-blue-500"
-                      icon={faGithub}
-                    />
-                  </a>
-                  <a href={prj.demo} target="_blank">
-                    <FontAwesomeIcon
-                      className="text-3xl text-blue-500"
-                      icon={faGlobe}
-                    />
-                  </a>
-                </div>
-                <div className="">
-                  <Image className="w-2/3" src={prj.image} alt="yelpcamp" />
-                </div>
-              </div>
-            </div>
-          ))}
-        </Carousal>
+      <div className="m-5 md:hidden">
+        <CarousalSmall projects={projects} />
       </div>
-      <div className="max-md:hidden">
-        <Carousal slidesToShow={2} className="mb-5 font-mono" dots={true}>
-          {projects.map((prj, idx) => (
-            <div key={idx}>
+      <div className="m-10 max-md:hidden">
+        <CarousalLarge projects={projects} slidesToShow={2} arrows={true} />
+      </div>
+    </div>
+  );
+}
+
+const CarousalLarge = ({ projects, slidesToShow, arrows }) => {
+  return (
+    <>
+      <Carousal
+        slidesToShow={slidesToShow}
+        className="mb-5 font-mono"
+        dots={true}
+        arrows={arrows}
+      >
+        {projects &&
+          projects.map((prj, idx) => (
+            <div key={idx} className="">
               <div
-                className={`m-5 mx-10 p-10 rounded-lg bg-gray-100  h-96 shadow-lg  grid grid-cols-2 dark:bg-slate-700`}
+                className={`m-5 p-10 rounded-lg bg-gray-100  h-96 shadow-lg  grid grid-flow-row md:grid-cols-2 dark:bg-slate-700`}
               >
-                <div className="">
+                <div className="grid-cols-1 mr-1 overflow-scroll overflow-x-hidden no-scrollbar">
                   <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                     {prj.title}
                   </h5>
                   <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                     {prj.description}
                   </p>
-                  <a href={prj.repo} target="_blank">
-                    <FontAwesomeIcon
-                      className="mr-1 text-3xl text-blue-500"
-                      icon={faGithub}
-                    />
-                  </a>
-                  <a href={prj.demo} target="_blank">
-                    <FontAwesomeIcon
-                      className="text-3xl text-blue-500"
-                      icon={faGlobe}
-                    />
-                  </a>
+                  <Atag link={prj.repo} icon={faGithub} />
+                  <Atag link={prj.demo} icon={faGlobe} />
                 </div>
-                <div className="">
-                  <Image className="" src={prj.image} alt="yelpcamp" />
+                <div className="relative ">
+                  <Image
+                    fill={true}
+                    src={prj.image}
+                    sizes="(max-width: 1000px) 100vw 100vh"
+                    alt={prj.title}
+                    className="object-contain w-auto"
+                  />
                 </div>
               </div>
             </div>
           ))}
-        </Carousal>
-      </div>
-    </div>
+      </Carousal>
+    </>
   );
-}
+};
+
+const CarousalSmall = ({ projects }) => {
+  return (
+    <>
+      <Carousal slidesToShow={1} className="mb-5 font-mono " dots={true}>
+        {projects.map((prj, idx) => (
+          <div key={idx}>
+            <div
+              className={`m-5 p-5 rounded-lg bg-gray-100 shadow-lg  grid grid-flow-row dark:bg-slate-700 overflow-scroll overflow-x-hidden no-scrollbar h-96`}
+            >
+              <div className="">
+                <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                  {prj.title}
+                </h5>
+                <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-200">
+                  {prj.description}
+                </p>
+                <Atag link={prj.repo} icon={faGithub} />
+                <Atag link={prj.demo} icon={faGlobe} />
+              </div>
+              <div className="">
+                <Image
+                  width={96}
+                  height={96}
+                  className="w-2/3"
+                  src={prj.image}
+                  alt="yelpcamp"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </Carousal>
+    </>
+  );
+};
