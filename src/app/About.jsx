@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import profilePhoto from "../../public/assets/images/profilePhoto.png";
+// import profilePhoto from "../../public/assets/images/linkedin_image.jpg";
 import Carousel from "./Carousal";
 
 export default function About() {
@@ -44,21 +45,13 @@ export default function About() {
               </div>
               <div className="place-self-center">
                 <p>
-                  I am currently pursuing a Bachelor&apos;s degree in
-                  Information Technology
-                </p>
-              </div>
-              <div className="place-self-center">
-                <p>
-                  I am a Backend and DevOps developer with a strong
-                  specialization in Node.js, AWS services, and Serverless
-                  Architecture. My expertise lies in building robust, scalable
-                  backend systems, optimizing infrastructure for performance,
-                  and managing cloud-based deployments. While backend
-                  development is my core focus, I also have experience with
-                  frontend technologies like React and Tailwind CSS, enabling me
-                  to collaborate effectively across teams and contribute to
-                  full-stack solutions when needed.
+                  I’m a backend developer who enjoys building reliable and
+                  scalable systems. I work with Spring Boot, Node.js, and AWS to
+                  create APIs and cloud-based solutions that perform well and
+                  scale smoothly. I enjoy solving challenging problems,
+                  optimizing performance, and making sure systems run
+                  efficiently. My goal is to build systems that are not only
+                  functional but also clean, efficient, and easy to maintain.
                 </p>
               </div>
             </div>
