@@ -1,24 +1,24 @@
-// "use client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import profilePhoto from "../../public/assets/images/profilePhoto.png";
-// import profilePhoto from "../../public/assets/images/linkedin_image.jpg";
 import Carousel from "./Carousal";
+import { BiLogoSpringBoot } from "react-icons/bi";
+import { DiNodejs } from "react-icons/di";
+import { FaAws } from "react-icons/fa";
 
 export default function About() {
   const skills = [
+    { name: "Java" },
     { name: "Expressjs" },
     { name: "MongoDB" },
     { name: "Postgresql" },
     { name: "Terraform" },
-    { name: "GraphQL" },
-    { name: "Redis" },
     { name: "Docker" },
-    { name: "Auth0" },
+    { name: "AWS ECS" },
+    { name: "AWS Lambda" },
+    { name: "AWS DynamoDb" },
     { name: "AWS Cognito" },
     { name: "Nextjs" },
     { name: "Tailwind CSS" },
-    { name: "Redux" },
   ];
   return (
     <>
@@ -64,10 +64,10 @@ export default function About() {
             My Skills
           </h2>
         </div>
-        <div className="relative z-10 grid w-full grid-cols-3 text-lg text-blue-400 max-md:grid-cols-1 md:text-4xl md:gap-4 place-items-center h-96">
-          <FontAwesomeIcon className="" icon="fa-brands fa-node " size="5x" />
-          <FontAwesomeIcon className="" icon="fa-brands fa-aws" size="5x" />
-          <FontAwesomeIcon className="" icon="fa-brands fa-react " size="5x" />
+        <div className="relative grid w-full my-5 text-blue-400 md:grid-cols-3 max-md:grid-rows-3 place-items-center">
+          <BiLogoSpringBoot className="w-28 h-28 md:w-52 md:h-52" />
+          <FaAws className="max-md:mt-3 w-28 h-28 md:w-52 md:h-52" />
+          <DiNodejs className="w-28 h-28 md:w-52 md:h-52" />
         </div>
       </div>
       <Carousel className="mb-5 text-blue-400" slidesToShow={3}>

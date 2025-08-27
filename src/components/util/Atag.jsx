@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export default function Atag({ link, icon }) {
+export default function Atag({ link, Icon }) {
   return (
-    <a href={link} target="_blank">
-      <FontAwesomeIcon className="mr-1 text-3xl text-blue-500" icon={icon} />
+    <a href={link} target="_blank" className="mx-2 text-3xl text-blue-500">
+      <Icon className="inline" />
     </a>
   );
 }

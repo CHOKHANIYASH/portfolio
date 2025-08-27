@@ -5,12 +5,12 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Logo from "../../public/assets/images/logo.svg";
 import { useTheme } from "next-themes";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FaMoon, FaSun } from "react-icons/fa";
 const navigation = [
   { name: "Home", href: "#Home", current: false },
   { name: "About me", href: "#About", current: false },
   { name: "Projects", href: "#Projects", current: false },
+  { name: "Coding Profiles", href: "#CodingProfiles", current: false },
   { name: "Contact", href: "#Contact", current: false },
 ];
 
@@ -66,23 +66,6 @@ export default function NavBar() {
                     alt="Your Company"
                   />
                 </div>
-                {mounted === true ? (
-                  <div className="absolute right-0 m-1 cursor-pointer sm:hidden">
-                    {isLight ? (
-                      <FontAwesomeIcon
-                        onClick={toggle}
-                        size="2x"
-                        icon={faSun}
-                      />
-                    ) : (
-                      <FontAwesomeIcon
-                        onClick={toggle}
-                        size="2x"
-                        icon={faMoon}
-                      />
-                    )}
-                  </div>
-                ) : null}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
@@ -103,19 +86,11 @@ export default function NavBar() {
                   </div>
                 </div>
                 {mounted === true ? (
-                  <div className="hidden cursor-pointer sm:block sm:ml-auto sm:mt-1">
+                  <div className="absolute right-0 cursor-pointer x">
                     {isLight ? (
-                      <FontAwesomeIcon
-                        onClick={toggle}
-                        size="2x"
-                        icon={faSun}
-                      />
+                      <FaSun onClick={toggle} size={30} />
                     ) : (
-                      <FontAwesomeIcon
-                        onClick={toggle}
-                        size="2x"
-                        icon={faMoon}
-                      />
+                      <FaMoon onClick={toggle} size={30} />
                     )}
                   </div>
                 ) : null}

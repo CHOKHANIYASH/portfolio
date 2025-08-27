@@ -1,43 +1,34 @@
 import React from "react";
 import dash from "../../public/assets/images/dash.svg";
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  FaCode,
+  FaDatabase,
+  FaGithub,
+  FaJava,
+  FaMedium,
+  FaTwitter,
+} from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa6";
 import Atag from "@/components/util/Atag";
+import { SiCodeforces, SiLeetcode } from "react-icons/si";
 
 export default function Home() {
   const boxContent = [
     {
-      logo: (
-        <FontAwesomeIcon
-          className="w-20 h-20 p-4 mt-2 text-white bg-blue-400 border-2 rounded-full"
-          icon="fa-solid fa-code"
-          size="3x"
-        />
-      ),
+      logo: FaCode,
       title: "Backend",
       desceiption:
         "What fascinates me about backend development is the efficiency and power behind it. Whether it's automating complex workflows or seamlessly handling numerous API requests, the backend does the heavy lifting with precision. The ability to optimize performance using different cloud architectures and scale effortlessly across systems is what makes backend development so intriguing to me.",
     },
     {
-      logo: (
-        <FontAwesomeIcon
-          className="w-20 h-20 p-4 mt-2 text-white bg-blue-400 border-2 rounded-full"
-          icon="fa-brands fa-java"
-          size="3x"
-        />
-      ),
+      logo: FaJava,
       title: "Java",
       desceiption:
         "Java was the first programming language I learned, and it remains my favorite. I find its versatility and strong object-oriented principles particularly appealing. I often use Java for my data structures and algorithms coding, as it provides a robust framework for tackling complex problems.",
     },
     {
-      logo: (
-        <FontAwesomeIcon
-          className="w-20 h-20 p-4 mt-2 text-white bg-blue-400 border-2 rounded-full"
-          icon="fa-solid fa-database"
-          size="3x"
-        />
-      ),
+      logo: FaDatabase,
       title: "Databases",
       desceiption:
         "As a developer databases are one of my favourite topic.I have worked with many databases like mongoDB,postgresql,dynamodb and I think databases are the core of any application.Figuring out which type of database and when to use it in project make it more interesting as a developer.",
@@ -47,22 +38,32 @@ export default function Home() {
     {
       name: "Github",
       link: "https://github.com/CHOKHANIYASH",
-      icon: "fa-brands fa-github",
+      icon: FaGithub,
     },
     {
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/yash-chokhani-55b27b225/",
-      icon: "fa-brands fa-linkedin",
+      icon: FaLinkedinIn,
     },
     {
       name: "Medium",
       link: "https://medium.com/@yashchokhani95",
-      icon: "fa-brands fa-medium",
+      icon: FaMedium,
     },
     {
       name: "Twitter",
       link: "https://twitter.com/yashchokhani6",
-      icon: "fa-brands fa-twitter",
+      icon: FaTwitter,
+    },
+    {
+      name: "Leetcode",
+      link: "https://leetcode.com/u/yashchokhani95/",
+      icon: SiLeetcode,
+    },
+    {
+      name: "Codeforces",
+      link: "https://codeforces.com/profile/yash_chokhani",
+      icon: SiCodeforces,
     },
   ];
   return (
@@ -88,7 +89,7 @@ export default function Home() {
             </h2>
             <div className="flex space-x-2 social-handles">
               {socials.map((social, index) => (
-                <Atag key={index} link={social.link} icon={social.icon} />
+                <Atag key={index} link={social.link} Icon={social.icon} />
               ))}
             </div>
           </div>
@@ -105,9 +106,12 @@ export default function Home() {
           {boxContent.map((item) => {
             return (
               <>
-                <div className="max-w-sm py-4 my-4 duration-300 ease-in border border-gray-200 rounded-lg shadow-sm shadow-slate-500 dark:shadow-white hover:-translate-y-10 max-md:hover:-translate-y-5 dark:border-gray-700 dark:bg-slate-800">
-                  <div href="#" className="text-2xl text-center w-100 ">
-                    {item.logo}
+                <div className="h-[30rem] max-w-sm py-4 my-4 overflow-scroll overflow-x-hidden duration-300 ease-in border border-gray-200 rounded-lg shadow-sm shadow-slate-500 dark:shadow-white hover:-translate-y-10 max-md:hover:-translate-y-5 dark:border-gray-700 dark:bg-slate-800 no-scrollbar">
+                  <div
+                    href="#"
+                    className="flex items-center justify-center w-full"
+                  >
+                    <item.logo className="w-1/3 p-5 text-white bg-blue-400 border-2 rounded-full h-fit" />
                   </div>
                   <div className="p-5">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-center text-blue-700 dark:text-white">

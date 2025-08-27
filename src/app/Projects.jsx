@@ -1,12 +1,11 @@
 "use client";
 import "./slider.css";
 import { useState, useEffect, useRef } from "react";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Carousal from "./Carousal";
 import Atag from "@/components/util/Atag";
 import axios from "axios";
+import { FaGithub, FaGlobe } from "react-icons/fa";
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
@@ -57,8 +56,9 @@ const CarousalLarge = ({ projects, slidesToShow, arrows }) => {
                   <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                     {prj.description}
                   </p>
-                  <Atag link={prj.repo} icon={faGithub} />
-                  <Atag link={prj.demo} icon={faGlobe} />
+
+                  <Atag link={prj.repo} Icon={FaGithub} />
+                  <Atag link={prj.demo} Icon={FaGlobe} />
                 </div>
                 <div className="relative ">
                   <Image
@@ -93,8 +93,8 @@ const CarousalSmall = ({ projects }) => {
                 <p className="mb-4 text-sm text-neutral-600 dark:text-neutral-200">
                   {prj.description}
                 </p>
-                <Atag link={prj.repo} icon={faGithub} />
-                <Atag link={prj.demo} icon={faGlobe} />
+                <Atag link={prj.repo} Icon={FaGithub} />
+                <Atag link={prj.demo} Icon={FaGlobe} />
               </div>
               <div className="">
                 <Image
